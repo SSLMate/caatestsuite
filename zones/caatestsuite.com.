@@ -1045,6 +1045,7 @@ big.basic		IN	CAA	0 issue "caatestsuite.com"
 critical1.basic		IN	CAA	128 caatestsuitedummyproperty "test"
 critical2.basic		IN	CAA	130 caatestsuitedummyproperty "test"
 cname-deny.basic	IN	CNAME	deny.basic
+cname-cname-deny.basic	IN	CNAME	cname-deny.basic
 dname-deny.basic	IN	DNAME	deny.basic
 cname-deny-sub.basic	IN	CNAME	sub.deny.basic
 cname-loop.basic	IN	CNAME	sub.cname-loop.basic
