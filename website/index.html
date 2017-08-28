@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<!--
+		Copyright 2017 Opsmate, Inc.
+
+		Licensed under the Apache License, Version 2.0 (the "License");
+		you may not use this file except in compliance with the License.
+		You may obtain a copy of the License at
+
+			http://www.apache.org/licenses/LICENSE-2.0
+
+		Unless required by applicable law or agreed to in writing, software
+		distributed under the License is distributed on an "AS IS" BASIS,
+		WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+		See the License for the specific language governing permissions and
+		limitations under the License.
+	-->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>CAA Test Suite</title>
+		<meta name="robots" content="noarchive" />
+		<style type="text/css">
+			html, body { margin: 0; padding: 0; background: white; color: black; font-family: sans-serif; }
+			#root { padding: 1em 2em; max-width: 1000px; margin: 0 auto; }
+			p { line-height: 1.5em; font-size: 120%; text-align: justify; }
+			table.tests { margin: 2em 0; border-collapse: collapse; }
+			table.tests th { text-align: left; }
+			table.tests th, table.tests td { border: solid black 1px; padding: 0.4em 0.4em; line-height: 1.4em; }
+			code { background: #eee; padding: 0.1em 0.3em; border-radius: 4px; font-family: monospace; white-space: nowrap; }
+			table.tests td:first-child { font-family: monospace; white-space: nowrap; }
+		</style>
+	</head>
+	<body>
+		<div id="root">
+			<h1>CAA Test Suite</h1>
+
+			<p>
+				This is a test suite which checks compliance with CAA checking as defined in
+				<a href="https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.4.8.pdf">version
+				1.4.8 of the CA/Browser Forum Baseline Requirements</a>.
+				Effective September 8, 2017, a CA which issues a certificate for any FQDN on this list
+				is in violation of the Baseline Requirements.  CAs are encouraged to use this
+				test suite to ensure that they are in compliance.
+			</p>
+
+			<p>
+				The zone files for caatestsuite.com are on <a href="https://github.com/SSLMate/caatestsuite">GitHub</a>.
+				If you have any questions, please <a href="https://github.com/SSLMate/caatestsuite/issues">open an issue</a>.
+			</p>
+
+			<table class="tests">
+				<thead>
+					<tr><th>FQDN</th><th>Test Description</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>empty.basic.caatestsuite.com</td>
+						<td>Tests proper processing of <code>0 issue ";"</code></td>
+					</tr>
+					<tr>
+						<td>deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing of <code>0 issue "caatestsuite.com"</code></td>
+					</tr>
+					<tr>
+						<td>big.basic.caatestsuite.com</td>
+						<td>Tests proper processing of gigantic CAA record set (1001 records) containing <code>0 issue "caatestsuite.com"</code></td>
+					</tr>
+					<tr>
+						<td>critical1.basic.caatestsuite.com</td>
+						<td>Tests proper processing of an unknown critical property: <code>128 caatestsuitedummyproperty "test"</code></td>
+					</tr>
+					<tr>
+						<td>critical2.basic.caatestsuite.com</td>
+						<td>Tests proper processing of an unknown critical property when another flag is set: <code>130 caatestsuitedummyproperty "test"</code></td>
+					</tr>
+					<tr>
+						<td>sub1.deny.basic.caatestsuite.com</td>
+						<td>Tests basic tree climbing, when CAA record exists at parent</td>
+					</tr>
+					<tr>
+						<td>sub2.sub1.deny.basic.caatestsuite.com</td>
+						<td>Tests basic tree climbing, when CAA record exists at grandparent</td>
+					</tr>
+					<tr>
+						<td>*.deny.basic.caatestsuite.com</td>
+						<td>Tests proper application of issue property to a wildcard FQDN</td>
+					</tr>
+					<tr>
+						<td>*.deny-wild.basic.caatestsuite.com</td>
+						<td>Tests proper application of issuewild property to a wildcard FQDN</td>
+					</tr>
+					<tr>
+						<td>cname-deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a CNAME, when CAA record exists at CNAME target</td>
+					</tr>
+					<tr>
+						<td>sub1.cname-deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a CNAME, when parent is a CNAME and CAA record exists at CNAME target</td>
+					</tr>
+					<tr>
+						<td>dname-deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a DNAME, when CAA record exists at DNAME target (note: this test would be modified by erratum 5097 to RFC 6844)</td>
+					</tr>
+					<tr>
+						<td>cname-deny-sub.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a CNAME, when CAA record exists at parent of CNAME target (note: this test would be modified by erratum 5065 to RFC 6844)</td>
+					</tr>
+					<tr>
+						<td>cname-loop.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a CNAME, when CNAME points to child of CNAME, causing a CAA lookup loop (note: this test would be modified by erratum 5065 to RFC 6844)</td>
+					</tr>
+					<tr>
+						<td>ipv6only.caatestsuite.com</td>
+						<td>Tests proper processing of CAA record at an IPv6-only authoritative name server</td>
+					</tr>
+					<tr>
+						<td>expired-dnssec.caatestsuite.com</td>
+						<td>Tests rejection when there is no CAA record but the DNSSEC signatures are expired</td>
+					</tr>
+					<tr>
+						<td>missing-dnssec.caatestsuite.com</td>
+						<td>Tests rejection when there is no CAA record but the DNSSEC signatures are missing</td>
+					</tr>
+					<tr>
+						<td>blackhole-dnssec.caatestsuite.com</td>
+						<td>Tests rejection when there is a DNSSEC validation chain to a nonresponsive name server</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
