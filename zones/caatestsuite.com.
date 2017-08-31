@@ -35,7 +35,6 @@ ns0			IN	A	96.126.110.12
 ns1			IN	A	96.126.110.12
 nsipv6			IN	AAAA	2600:3c03::f03c:91ff:fe92:9ae0
 ;nsgo			IN	A
-nsblackhole		IN	A	97.107.135.226
 
 
 empty.basic		IN	CAA	0 issue ";"
@@ -1054,17 +1053,3 @@ deny-wild.basic		IN	CAA	0 issuewild "caatestsuite.com"
 ipv6only		IN	NS	nsipv6
 
 ;retry			IN	NS	nsgo
-
-expired-dnssec		IN	NS	ns0
-expired-dnssec		IN	NS	ns1
-$INCLUDE dsset-expired-dnssec.caatestsuite.com.
-
-missing-dnssec		IN	NS	ns0
-missing-dnssec		IN	NS	ns1
-$INCLUDE dsset-missing-dnssec.caatestsuite.com.
-
-blackhole-dnssec	IN	NS	nsblackhole
-$INCLUDE dsset-blackhole-dnssec.caatestsuite.com.
-
-$INCLUDE Kcaatestsuite.com.+005+62997.key
-$INCLUDE Kcaatestsuite.com.+005+63892.key

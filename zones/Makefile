@@ -12,19 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-all: expired-dnssec.caatestsuite.com.signed missing-dnssec.caatestsuite.com.signed blackhole-dnssec.caatestsuite.com.signed caatestsuite.com.signed
+all: expired.caatestsuite-dnssec.com.signed missing.caatestsuite-dnssec.com.signed blackhole.caatestsuite-dnssec.com.signed caatestsuite-dnssec.com.signed
 
-expired-dnssec.caatestsuite.com.signed: expired-dnssec.caatestsuite.com.
-	dnssec-signzone -f $@ -e now+30 -k Kexpired-dnssec.caatestsuite.com.+005+28186.key expired-dnssec.caatestsuite.com. Kexpired-dnssec.caatestsuite.com.+005+53253.key
+expired.caatestsuite-dnssec.com.signed: expired.caatestsuite-dnssec.com.
+	dnssec-signzone -f $@ -e now+30 -k Kexpired.caatestsuite-dnssec.com.+005+54799.key expired.caatestsuite-dnssec.com. Kexpired.caatestsuite-dnssec.com.+005+20931.key
 
-missing-dnssec.caatestsuite.com.signed: missing-dnssec.caatestsuite.com.
-	dnssec-signzone -f $@ -e 20220530144500 -k Kmissing-dnssec.caatestsuite.com.+005+33439.key missing-dnssec.caatestsuite.com. Kmissing-dnssec.caatestsuite.com.+005+41463.key
+missing.caatestsuite-dnssec.com.signed: missing.caatestsuite-dnssec.com.
+	dnssec-signzone -f $@ -e 20220530144500 -k Kmissing.caatestsuite-dnssec.com.+005+61357.key missing.caatestsuite-dnssec.com. Kmissing.caatestsuite-dnssec.com.+005+25092.key
 
-blackhole-dnssec.caatestsuite.com.signed: blackhole-dnssec.caatestsuite.com.
-	dnssec-signzone -f $@ -e 20220530144500 -k Kblackhole-dnssec.caatestsuite.com.+005+04777.key blackhole-dnssec.caatestsuite.com. Kblackhole-dnssec.caatestsuite.com.+005+13938.key
+blackhole.caatestsuite-dnssec.com.signed: blackhole.caatestsuite-dnssec.com.
+	dnssec-signzone -f $@ -e 20220530144500 -k Kblackhole.caatestsuite-dnssec.com.+005+04864.key blackhole.caatestsuite-dnssec.com. Kblackhole.caatestsuite-dnssec.com.+005+36765.key
 
-caatestsuite.com.signed: caatestsuite.com. missing-dnssec.caatestsuite.com.signed expired-dnssec.caatestsuite.com.signed
-	dnssec-signzone -f $@ -e 20220530144500 -k Kcaatestsuite.com.+005+63892.key caatestsuite.com. Kcaatestsuite.com.+005+62997.key
+caatestsuite-dnssec.com.signed: caatestsuite-dnssec.com. missing.caatestsuite-dnssec.com.signed expired.caatestsuite-dnssec.com.signed
+	dnssec-signzone -f $@ -e 20220530144500 -k Kcaatestsuite-dnssec.com.+005+58522.key caatestsuite-dnssec.com. Kcaatestsuite-dnssec.com.+005+62745.key
 
 clean:
 	rm -f *.signed dsset-*

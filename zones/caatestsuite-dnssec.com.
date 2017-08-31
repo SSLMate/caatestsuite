@@ -13,7 +13,7 @@
 ; limitations under the License.
 
 $TTL 1m
-@			IN	SOA	ns0.caatestsuite.com. hostmaster.caatestsuite.com. (
+@			IN	SOA	ns0.caatestsuite-dnssec.com. hostmaster.caatestsuite-dnssec.com. (
 					1	; serial
 					43200	; refresh
 					600	; retry
@@ -22,8 +22,26 @@ $TTL 1m
 				)
 
 ; NS records
-@			IN	NS	ns0.caatestsuite.com.
-@			IN	NS	ns1.caatestsuite.com.
+@			IN	NS	ns0
+@			IN	NS	ns1
 
-$INCLUDE Kexpired-dnssec.caatestsuite.com.+005+28186.key
-$INCLUDE Kexpired-dnssec.caatestsuite.com.+005+53253.key
+; MX records
+@			IN	MX	10 mail.opsmate.com.
+
+ns0			IN	A	96.126.110.12
+ns1			IN	A	96.126.110.12
+nsblackhole		IN	A	97.107.135.226
+
+expired			IN	NS	ns0
+expired			IN	NS	ns1
+$INCLUDE dsset-expired.caatestsuite-dnssec.com.
+
+missing			IN	NS	ns0
+missing			IN	NS	ns1
+$INCLUDE dsset-missing.caatestsuite-dnssec.com.
+
+blackhole		IN	NS	nsblackhole
+$INCLUDE dsset-blackhole.caatestsuite-dnssec.com.
+
+$INCLUDE Kcaatestsuite-dnssec.com.+005+58522.key
+$INCLUDE Kcaatestsuite-dnssec.com.+005+62745.key

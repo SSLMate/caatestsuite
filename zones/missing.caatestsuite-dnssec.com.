@@ -13,7 +13,7 @@
 ; limitations under the License.
 
 $TTL 1m
-@			IN	SOA	ns0.caatestsuite.com. hostmaster.caatestsuite.com. (
+@			IN	SOA	ns0.caatestsuite-dnssec.com. hostmaster.caatestsuite-dnssec.com. (
 					1	; serial
 					43200	; refresh
 					600	; retry
@@ -22,8 +22,8 @@ $TTL 1m
 				)
 
 ; NS records
-@			IN	NS	ns0.caatestsuite.com.
-@			IN	NS	ns1.caatestsuite.com.
+@			IN	NS	ns0.caatestsuite-dnssec.com.
+@			IN	NS	ns1.caatestsuite-dnssec.com.
 
-$INCLUDE /caatestsuite/Kmissing-dnssec.caatestsuite.com.+005+33439.key
-$INCLUDE /caatestsuite/Kmissing-dnssec.caatestsuite.com.+005+41463.key
+$INCLUDE /caatestsuite/Kmissing.caatestsuite-dnssec.com.+005+25092.key
+$INCLUDE /caatestsuite/Kmissing.caatestsuite-dnssec.com.+005+61357.key
