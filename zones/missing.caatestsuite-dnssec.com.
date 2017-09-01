@@ -25,5 +25,5 @@ $TTL 1m
 @			IN	NS	ns0.caatestsuite-dnssec.com.
 @			IN	NS	ns1.caatestsuite-dnssec.com.
 
-$INCLUDE /caatestsuite/Kmissing.caatestsuite-dnssec.com.+005+25092.key
-$INCLUDE /caatestsuite/Kmissing.caatestsuite-dnssec.com.+005+61357.key
+$INCLUDE Kmissing.caatestsuite-dnssec.com.+005+25092.key
+$INCLUDE Kmissing.caatestsuite-dnssec.com.+005+61357.key

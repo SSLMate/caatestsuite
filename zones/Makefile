@@ -12,7 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-all: expired.caatestsuite-dnssec.com.signed caatestsuite-dnssec.com.signed
+all: missing.caatestsuite-dnssec.com.signed expired.caatestsuite-dnssec.com.signed caatestsuite-dnssec.com.signed
+
+missing.caatestsuite-dnssec.com.signed: missing.caatestsuite-dnssec.com.
+	named-checkzone -o $@ missing.caatestsuite-dnssec.com. missing.caatestsuite-dnssec.com.
 
 expired.caatestsuite-dnssec.com.signed: expired.caatestsuite-dnssec.com.
 	dnssec-signzone -f $@ -e now+30 -k Kexpired.caatestsuite-dnssec.com.+005+54799.key expired.caatestsuite-dnssec.com. Kexpired.caatestsuite-dnssec.com.+005+20931.key
