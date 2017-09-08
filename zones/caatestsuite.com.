@@ -1053,3 +1053,5 @@ deny-wild.basic		IN	CAA	0 issuewild "caatestsuite.com"
 ipv6only		IN	NS	nsipv6
 
 ;retry			IN	NS	nsgo
+
+xss			IN	CAA	0 issue "<script>alert('Wheeeeee')</script>"
