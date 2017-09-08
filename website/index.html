@@ -45,14 +45,20 @@
 				This is a test suite which checks compliance with CAA checking as defined in
 				<a href="https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.4.8.pdf">version
 				1.4.8 of the CA/Browser Forum Baseline Requirements</a>.
-				Effective September 8, 2017, a CA which issues a certificate for any FQDN on this list
-				is in violation of the Baseline Requirements.  CAs are encouraged to use this
+				Effective September 8, 2017, a CA which issues a certificate in violation of a domain's
+				CAA policy is in violation of the Baseline Requirements.  CAs are encouraged to use this
 				test suite to ensure that they are in compliance.
 			</p>
 
 			<p>
 				The zone files for caatestsuite.com are on <a href="https://github.com/SSLMate/caatestsuite">GitHub</a>.
 				If you have any questions, please <a href="https://github.com/SSLMate/caatestsuite/issues">open an issue</a>.
+			</p>
+
+			<h2>Deny Tests</h2>
+
+			<p>
+				No CA is allowed to issue for any of the following FQDNs:
 			</p>
 
 			<table class="tests">
@@ -140,6 +146,32 @@
 						<td>refused.caatestsuite-dnssec.com</td>
 						<td>Tests rejection when there is a DNSSEC validation chain to a name server returning REFUSED</td>
 					</tr>
+					<tr>
+						<td>xss.caatestsuite.com</td>
+						<td>Tests rejection when the issue property contains HTML and JavaScript.  Makes sure there are no XSS vulnerabilities in the CA's website.</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Special Tests</h2>
+
+			<p>
+				These tests only apply to some CAs.  Check the description for details.
+			</p>
+
+			<table class="tests">
+				<thead>
+					<tr><th>FQDN</th><th>Test Description</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>auto-www-san.caatestsuite.com</td>
+						<td>All CAs are allowed to issue for <code>auto-www-san.caatestsuite.com</code>, but no CA is allowed to issue for <code>www.auto-www-san.caatestsuite.com</code>.  This test makes sure CAA is checked for a SAN that is automatically added for the www sub-domain.</td>
+					</tr>
+					<tr>
+						<td>www.auto-base-san.caatestsuite.com</td>
+						<td>All CAs are allowed to issue for <code>www.auto-base-san.caatestsuite.com</code>, but no CA is allowed to issue for <code>auto-base-san.caatestsuite.com</code>.  This test makes sure CAA is checked for a SAN that is automatically added for the base domain.</td>
+					</tr>
 				</tbody>
 			</table>
 
@@ -148,6 +180,7 @@
 			<ul class="changelog">
 				<li>2017-09-01: Added <code>servfail.caatestsuite-dnssec.com</code> and <code>refused.caatestsuite-dnssec.com</code>.</li>
 				<li>2017-09-07: <a href="https://github.com/SSLMate/caatestsuite/issues/3">Removed <code>cname-loop.basic.caatestsuite.com</code></a>.</li>
+				<li>2017-09-08: Added <code>auto-www-san.caatestsuite.com</code>, <code>www.auto-base-san.caatestsuite.com</code>, and <code>xss.caatestsuite.com</code>.</li>
 			</ul>
 		</div>
 	</body>
