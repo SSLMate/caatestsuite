@@ -1055,3 +1055,8 @@ ipv6only		IN	NS	nsipv6
 ;retry			IN	NS	nsgo
 
 xss			IN	CAA	0 issue "<script>alert('Wheeeeee')</script>"
+
+www.auto-base-san	IN	CAA	0 dummy "dummy"
+auto-base-san		IN	CAA	0 issue "caatestsuite.com"
+
+www.auto-www-san	IN	CAA	0 issue "caatestsuite.com"
