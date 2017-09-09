@@ -123,6 +123,10 @@
 						<td>Tests proper processing of a CNAME, when CAA record exists at parent of CNAME target (note: this test would be modified by erratum 5065 to RFC 6844)</td>
 					</tr>
 					<tr>
+						<td>deny.permit.basic.caatestsuite.com</td>
+						<td>Tests proper rejection when parent name (<code>permit.basic.caatestsuite.com</code>) contains a permissible CAA record set</td>
+					</tr>
+					<tr>
 						<td>ipv6only.caatestsuite.com</td>
 						<td>Tests proper processing of CAA record at an IPv6-only authoritative name server</td>
 					</tr>
@@ -181,6 +185,7 @@
 				<li>2017-09-01: Added <code>servfail.caatestsuite-dnssec.com</code> and <code>refused.caatestsuite-dnssec.com</code>.</li>
 				<li>2017-09-07: <a href="https://github.com/SSLMate/caatestsuite/issues/3">Removed <code>cname-loop.basic.caatestsuite.com</code></a>.</li>
 				<li>2017-09-08: Added <code>auto-www-san.caatestsuite.com</code>, <code>www.auto-base-san.caatestsuite.com</code>, and <code>xss.caatestsuite.com</code>.</li>
+				<li>2017-09-09: Added <code>deny.permit.basic.caatestsuite.com</code>.</li>
 			</ul>
 		</div>
 	</body>
