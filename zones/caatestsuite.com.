@@ -1049,6 +1049,8 @@ dname-deny.basic	IN	DNAME	deny.basic
 cname-deny-sub.basic	IN	CNAME	sub.deny.basic
 cname-loop.basic	IN	CNAME	sub.cname-loop.basic
 deny-wild.basic		IN	CAA	0 issuewild "caatestsuite.com"
+permit.basic		IN	CAA	0 dummy "dummy"
+deny.permit.basic	IN	CAA	0 issue "caatestsuite.com"
 
 ipv6only		IN	NS	nsipv6
 
