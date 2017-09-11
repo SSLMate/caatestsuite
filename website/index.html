@@ -115,14 +115,6 @@
 						<td>Tests proper processing of a CNAME, when parent is a CNAME and CAA record exists at CNAME target</td>
 					</tr>
 					<tr>
-						<td>dname-deny.basic.caatestsuite.com</td>
-						<td>Tests proper processing of a DNAME, when CAA record exists at DNAME target (note: this test would be modified by erratum 5097 to RFC 6844)</td>
-					</tr>
-					<tr>
-						<td>cname-deny-sub.basic.caatestsuite.com</td>
-						<td>Tests proper processing of a CNAME, when CAA record exists at parent of CNAME target (note: this test would be modified by erratum 5065 to RFC 6844)</td>
-					</tr>
-					<tr>
 						<td>deny.permit.basic.caatestsuite.com</td>
 						<td>Tests proper rejection when parent name (<code>permit.basic.caatestsuite.com</code>) contains a permissible CAA record set</td>
 					</tr>
@@ -179,6 +171,29 @@
 				</tbody>
 			</table>
 
+			<h2>Informational Tests</h2>
+
+			<p>
+				Issuing for these FQDNs would technically be a misissuance by a strict reading of
+				RFC 6844, but that may change in the near future (see test description for details):
+			</p>
+
+			<table class="tests">
+				<thead>
+					<tr><th>FQDN</th><th>Test Description</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>dname-deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a DNAME, when CAA record exists at DNAME target (note: this test would be modified by erratum 5097 to RFC 6844)</td>
+					</tr>
+					<tr>
+						<td>cname-deny-sub.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a CNAME, when CAA record exists at parent of CNAME target (note: this test would be modified by erratum 5065 to RFC 6844)</td>
+					</tr>
+				</tbody>
+			</table>
+
 			<h2>Change Log</h2>
 
 			<ul class="changelog">
@@ -186,6 +201,7 @@
 				<li>2017-09-07: <a href="https://github.com/SSLMate/caatestsuite/issues/3">Removed <code>cname-loop.basic.caatestsuite.com</code></a>.</li>
 				<li>2017-09-08: Added <code>auto-www-san.caatestsuite.com</code>, <code>www.auto-base-san.caatestsuite.com</code>, and <code>xss.caatestsuite.com</code>.</li>
 				<li>2017-09-09: Added <code>deny.permit.basic.caatestsuite.com</code>.</li>
+				<li>2017-09-11: Moved <code>dname-deny.basic.caatestsuite.com</code> and <code>cname-deny-sub.basic.caatestsuite.com</code> to Informational section, since they are affected by errata.</li>
 			</ul>
 		</div>
 	</body>
