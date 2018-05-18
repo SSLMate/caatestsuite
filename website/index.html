@@ -75,6 +75,14 @@
 						<td>Tests proper processing of <code>0 issue "caatestsuite.com"</code></td>
 					</tr>
 					<tr>
+						<td>uppercase-deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing when issue tag is uppercase (<code>0 ISSUE "caatestsuite.com"</code>)</td>
+					</tr>
+					<tr>
+						<td>mixedcase-deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing when issue tag is mixedcase (<code>0 IsSuE "caatestsuite.com"</code>)</td>
+					</tr>
+					<tr>
 						<td>big.basic.caatestsuite.com</td>
 						<td>Tests proper processing of gigantic CAA record set (1001 records) containing <code>0 issue "caatestsuite.com"</code></td>
 					</tr>
@@ -202,6 +210,7 @@
 				<li>2017-09-08: Added <code>auto-www-san.caatestsuite.com</code>, <code>www.auto-base-san.caatestsuite.com</code>, and <code>xss.caatestsuite.com</code>.</li>
 				<li>2017-09-09: Added <code>deny.permit.basic.caatestsuite.com</code>.</li>
 				<li>2017-09-11: Moved <code>dname-deny.basic.caatestsuite.com</code> and <code>cname-deny-sub.basic.caatestsuite.com</code> to Informational section, since they are affected by errata.</li>
+				<li>2018-05-18: Added <code>uppercase-deny.basic.caatestsuite.com</code> and <code>mixedcase-deny.basic.caatestsuite.com</code></li>
 			</ul>
 		</div>
 	</body>

@@ -39,6 +39,8 @@ nsipv6			IN	AAAA	2600:3c03::f03c:91ff:fe92:9ae0
 
 empty.basic		IN	CAA	0 issue ";"
 deny.basic		IN	CAA	0 issue "caatestsuite.com"
+uppercase-deny.basic	IN	CAA	0 ISSUE "caatestsuite.com"
+mixedcase-deny.basic	IN	CAA	0 IsSuE "caatestsuite.com"
 big.basic		IN	CAA	0 test0 "test"
 big.basic		IN	CAA	0 test1 "test"
 big.basic		IN	CAA	0 test2 "test"
