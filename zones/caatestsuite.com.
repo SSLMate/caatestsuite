@@ -31,9 +31,9 @@ $TTL 1m
 @			IN	A	23.22.183.152
 @			IN	AAAA	2600:1f18:2469:d900:d925:29c1:8676:f3eb
 
-ns0			IN	A	96.126.110.12
-ns1			IN	A	96.126.110.12
-nsipv6			IN	AAAA	2600:3c03::f03c:91ff:fe92:9ae0
+ns0			IN	A	45.79.179.40
+ns1			IN	A	45.79.179.40
+nsipv6			IN	AAAA	2600:3c03::46:1005
 ;nsgo			IN	A
 
 

@@ -28,8 +28,8 @@ $TTL 1m
 ; MX records
 @			IN	MX	10 mail.opsmate.com.
 
-ns0			IN	A	96.126.110.12
-ns1			IN	A	96.126.110.12
+ns0			IN	A	45.79.179.40
+ns1			IN	A	45.79.179.40
 nsblackhole		IN	A	97.107.135.226
 nsrefused		IN	A	162.243.143.228
 
