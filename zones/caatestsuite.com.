@@ -28,8 +28,8 @@ $TTL 1m
 ; MX records
 @			IN	MX	10 mail.opsmate.com.
 
-@			IN	A	23.22.183.152
-@			IN	AAAA	2600:1f18:2469:d900:d925:29c1:8676:f3eb
+@			IN	A	54.83.199.30
+@			IN	AAAA	2600:1f18:2469:d900:203b:729e:2e54:8c43
 
 ns0			IN	A	45.79.179.40
 ns1			IN	A	45.79.179.40
