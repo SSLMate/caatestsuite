@@ -31,7 +31,7 @@ $TTL 1m
 ns0			IN	A	45.79.179.40
 ns1			IN	A	45.79.179.40
 nsblackhole		IN	A	97.107.135.226
-nsrefused		IN	A	162.243.143.228
+nsrefused		IN	A	128.148.32.121
 
 expired			IN	NS	ns0
 expired			IN	NS	ns1
