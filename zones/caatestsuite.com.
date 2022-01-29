@@ -33,7 +33,7 @@ $TTL 1m
 
 ns0			IN	A	45.79.179.40
 ns1			IN	A	45.79.179.40
-nsipv6			IN	AAAA	2600:3c03::46:1005
+nsipv6			IN	AAAA	2600:3c03:e000:45f::
 ;nsgo			IN	A
 
 
