@@ -21,7 +21,7 @@ expired.caatestsuite-dnssec.com.signed: expired.caatestsuite-dnssec.com.
 	dnssec-signzone -f $@ -e now+30 -k Kexpired.caatestsuite-dnssec.com.+005+54799.key expired.caatestsuite-dnssec.com. Kexpired.caatestsuite-dnssec.com.+005+20931.key
 
 caatestsuite-dnssec.com.signed: caatestsuite-dnssec.com.
-	dnssec-signzone -f $@ -e 20220530144500 -k Kcaatestsuite-dnssec.com.+005+58522.key caatestsuite-dnssec.com. Kcaatestsuite-dnssec.com.+005+62745.key
+	dnssec-signzone -f $@ -e 20320530144500 -k Kcaatestsuite-dnssec.com.+005+58522.key caatestsuite-dnssec.com. Kcaatestsuite-dnssec.com.+005+62745.key
 
 clean:
 	rm -f *.signed dsset-*
