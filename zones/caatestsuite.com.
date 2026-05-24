@@ -21,22 +21,21 @@ $TTL 1m
 					60	; minimum
 				)
 
-; NS records
+;
+; Records specific to the deployment of caatestsuite.com
+;
 @			IN	NS	ns0
 @			IN	NS	ns1
-
-; MX records
 @			IN	MX	10 mail.opsmate.com.
-
 @			IN	A	54.83.199.30
 @			IN	AAAA	2600:1f18:2469:d900:203b:729e:2e54:8c43
-
 ns0			IN	A	45.79.179.40
 ns1			IN	A	45.79.179.40
 nsipv6			IN	AAAA	2600:3c03:e000:45f::
-;nsgo			IN	A
 
-
+;
+; The test cases
+;
 empty.basic		IN	CAA	0 issue ";"
 deny.basic		IN	CAA	0 issue "caatestsuite.com"
 uppercase-deny.basic	IN	CAA	0 ISSUE "caatestsuite.com"

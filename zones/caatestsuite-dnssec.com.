@@ -21,11 +21,11 @@ $TTL 1m
 					60	; minimum
 				)
 
-; NS records
+;
+; Records specific to the deployment of caatestsuite.com
+;
 @			IN	NS	ns0
 @			IN	NS	ns1
-
-; MX records
 @			IN	MX	10 mail.opsmate.com.
 
 ns0			IN	A	45.79.179.40
@@ -33,6 +33,9 @@ ns1			IN	A	45.79.179.40
 nsblackhole		IN	A	97.107.135.226
 nsrefused		IN	A	128.148.32.121
 
+;
+; The test cases
+;
 expired			IN	NS	ns0
 expired			IN	NS	ns1
 expired			IN	DS	54799 5 1 869ED8F574B654CC8077846F086D73F0FF0DFE24
