@@ -27,8 +27,8 @@ $TTL 1m
 @			IN	NS	ns0
 @			IN	NS	ns1
 @			IN	MX	10 mail.opsmate.com.
-@			IN	A	54.83.199.30
-@			IN	AAAA	2600:1f18:2469:d900:203b:729e:2e54:8c43
+@			IN	A	52.4.18.132
+@			IN	AAAA	2600:1f18:2469:d900:78c5:6ac8:80b6:b3d0
 _acme-challenge		IN	NS	3.dns-approval.sslmate.com.
 _pki-validation		IN	NS	3.dns-approval.sslmate.com.
 ns0			IN	A	45.79.179.40
