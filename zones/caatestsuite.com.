@@ -1047,8 +1047,8 @@ critical1.basic		IN	CAA	128 caatestsuitedummyproperty "test"
 critical2.basic		IN	CAA	130 caatestsuitedummyproperty "test"
 cname-deny.basic	IN	CNAME	deny.basic
 cname-cname-deny.basic	IN	CNAME	cname-deny.basic
-dname-deny.basic	IN	DNAME	deny.basic
-cname-deny-sub.basic	IN	CNAME	sub.deny.basic
+dname-permit.deny.basic	IN	DNAME	permit.basic
+cname-permit-sub.deny.basic	IN	CNAME	sub.permit.basic
 cname-loop.basic	IN	CNAME	sub.cname-loop.basic
 deny-wild.basic		IN	CAA	0 issuewild "caatestsuite.com"
 permit.basic		IN	CAA	0 dummy "dummy"

@@ -43,8 +43,8 @@
 
 			<p>
 				This is a test suite which checks compliance with <a href="https://sslmate.com/caa">CAA</a> checking as defined in
-				<a href="https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.4.8.pdf">version
-				1.4.8 of the CA/Browser Forum Baseline Requirements</a>.
+				<a href="https://cabforum.org/uploads/CA-Browser-Forum-BR-1.7.3.pdf">version
+				1.7.3 of the CA/Browser Forum Baseline Requirements</a>.
 				Effective September 8, 2017, a CA which issues a certificate in violation of a domain's
 				CAA policy is in violation of the Baseline Requirements.  CAs are encouraged to use this
 				test suite to ensure that they are in compliance.
@@ -123,6 +123,14 @@
 						<td>Tests proper processing of a CNAME, when parent is a CNAME and CAA record exists at CNAME target</td>
 					</tr>
 					<tr>
+						<td>dname-permit.deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a DNAME, when a permissible CAA record exists at DNAME target</td>
+					</tr>
+					<tr>
+						<td>cname-permit-sub.deny.basic.caatestsuite.com</td>
+						<td>Tests proper processing of a CNAME, when a permissible CAA record exists at parent of CNAME target</td>
+					</tr>
+					<tr>
 						<td>deny.permit.basic.caatestsuite.com</td>
 						<td>Tests proper rejection when parent name (<code>permit.basic.caatestsuite.com</code>) contains a permissible CAA record set</td>
 					</tr>
@@ -179,29 +187,6 @@
 				</tbody>
 			</table>
 
-			<h2>Informational Tests</h2>
-
-			<p>
-				Issuing for these FQDNs would technically be a misissuance by a strict reading of
-				RFC 6844, but that may change in the near future (see test description for details):
-			</p>
-
-			<table class="tests">
-				<thead>
-					<tr><th>FQDN</th><th>Test Description</th></tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>dname-deny.basic.caatestsuite.com</td>
-						<td>Tests proper processing of a DNAME, when CAA record exists at DNAME target (note: this test would be modified by erratum 5097 to RFC 6844)</td>
-					</tr>
-					<tr>
-						<td>cname-deny-sub.basic.caatestsuite.com</td>
-						<td>Tests proper processing of a CNAME, when CAA record exists at parent of CNAME target (note: this test would be modified by erratum 5065 to RFC 6844)</td>
-					</tr>
-				</tbody>
-			</table>
-
 			<h2>Change Log</h2>
 
 			<ul class="changelog">
@@ -211,6 +196,7 @@
 				<li>2017-09-09: Added <code>deny.permit.basic.caatestsuite.com</code>.</li>
 				<li>2017-09-11: Moved <code>dname-deny.basic.caatestsuite.com</code> and <code>cname-deny-sub.basic.caatestsuite.com</code> to Informational section, since they are affected by errata.</li>
 				<li>2018-05-18: Added <code>uppercase-deny.basic.caatestsuite.com</code> and <code>mixedcase-deny.basic.caatestsuite.com</code></li>
+				<li>2026-xx-xx: Updated for RFC 8659 (adopted in Baseline Requirements 1.7.3).</li>
 			</ul>
 		</div>
 	</body>
